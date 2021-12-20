@@ -1,0 +1,141 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "main"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/example/main.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 750.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "rubbertoy"
+  data: "embedded_components {\n"
+  "  id: \"mesh_float32\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/materials/mesh_float32.material\\\"\\n"
+  "vertices: \\\"/example/assets/rubbertoy_float32.buffer\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLES\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -125.0\n"
+  "    y: 88.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.21643962\n"
+  "    z: 0.0\n"
+  "    w: 0.976296\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"mesh_int8\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/materials/mesh_int8.material\\\"\\n"
+  "vertices: \\\"/example/assets/rubbertoy_int8.buffer\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLES\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 125.0\n"
+  "    y: 88.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.21643962\n"
+  "    z: 0.0\n"
+  "    w: 0.976296\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"mesh_float32_bin\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/materials/mesh_float32.material\\\"\\n"
+  "vertices: \\\"/example/assets/rubbertoy_float32_bin.buffer\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLES\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -125.0\n"
+  "    y: -87.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.21643962\n"
+  "    z: 0.0\n"
+  "    w: 0.976296\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"mesh_int8_bin\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/materials/mesh_int8.material\\\"\\n"
+  "vertices: \\\"/example/assets/rubbertoy_int8_bin.buffer\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLES\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 125.0\n"
+  "    y: -87.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.21643962\n"
+  "    z: 0.0\n"
+  "    w: 0.976296\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}

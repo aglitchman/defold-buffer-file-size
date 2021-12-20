@@ -1,0 +1,59 @@
+local s3d_render = require("example.scene3d.render")
+
+go.property("buffer_float32_bin", resource.buffer("/example/assets/rubbertoy_float32_bin.buffer"))
+go.property("buffer_int8_bin", resource.buffer("/example/assets/rubbertoy_int8_bin.buffer"))
+
+function init(self)
+    msg.post("@render:", "clear_color", { color = vmath.vector4(0.9, 0.9, 0.9, 1.0) })
+
+    s3d_render.view_position = go.get_position()
+    s3d_render.update_camera(270, 0)
+
+    print("Loading float32.bin")
+    local bin = sys.load_resource("/example/assets/rubbertoy_float32.bin")
+    local elements = #bin / (3*4 + 3*4 + 3*4)
+    local buf = buffer.create(elements, {
+        {name=hash("position"), type=buffer.VALUE_TYPE_FLOAT32, count=3 },
+        {name=hash("normal"), type=buffer.VALUE_TYPE_FLOAT32, count=3 },
+        {name=hash("color"), type=buffer.VALUE_TYPE_FLOAT32, count=3 }
+    })
+    local position = buffer.get_stream(buf, hash("position"))
+    local normal = buffer.get_stream(buf, hash("normal"))
+    local color = buffer.get_stream(buf, hash("color"))
+    for i = 1, elements*3 do
+        position[i] = ext.str_float32(bin, (i - 1) * 4)
+        normal[i] = ext.str_float32(bin,  (i - 1) * 4 + elements * 3*4)
+        color[i] = ext.str_float32(bin, (i - 1) * 4 + elements * (3*4 + 3*4))
+    end
+    resource.set_buffer(self.buffer_float32_bin, buf)
+
+    print("Loading int8.bin")
+    local bin = sys.load_resource("/example/assets/rubbertoy_int8.bin")
+    local elements = #bin / (3*4 + 3*1 + 3*1)
+    local buf = buffer.create(elements, {
+        {name=hash("position"), type=buffer.VALUE_TYPE_FLOAT32, count=3 },
+        {name=hash("normal"), type=buffer.VALUE_TYPE_INT8, count=3 },
+        {name=hash("color"), type=buffer.VALUE_TYPE_UINT8, count=3 }
+    })
+    local position = buffer.get_stream(buf, hash("position"))
+    local normal = buffer.get_stream(buf, hash("normal"))
+    local color = buffer.get_stream(buf, hash("color"))
+    for i = 1, elements*3 do
+        position[i] = ext.str_float32(bin, (i - 1) * 4)
+        normal[i] = ext.str_int8(bin,  (i - 1) * 1 + elements * 3*4)
+        color[i] = ext.str_uint8(bin, (i - 1) * 1 + elements * (3*4 + 3*1))
+    end
+    resource.set_buffer(self.buffer_int8_bin, buf)
+end
+
+function final(self)
+end
+
+function update(self, dt)
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+end
